@@ -1,1 +1,25 @@
 
+import os
+import numpy as np
+import pandas as pd
+import xgboost as xgb
+import matplotlib.pyplot as plt
+import pandas_datareader.data as web
+import datetime as dt
+from xgboost import XGBRegressor
+from sklearn.linear_model import LinearRegression
+from xgboost import plot_importance, plot_tree
+from matplotlib import dates as mdates
+from sklearn.metrics import mean_squared_error
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error, silhouette_samples, silhouette_score
+
+import plotly as py
+import plotly.io as pio
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
+
+df= web.DataReader('AAPL', 'yahoo',start='2016-8-1',end= '2018-12-1')
